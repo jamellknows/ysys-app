@@ -5,5 +5,7 @@
   /* border: 1px dotted indigo; */
 }
 .soundButton{
-  text-align: right;
+  position:absolute;
+  top:30px;
 }
+

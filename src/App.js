@@ -1,14 +1,16 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
 import Main from "./audioClips/Main.mp3";
-import { Howl, Howler } from "howler";
+// import { Howl, Howler } from "howler";
+import {FooterComponent} from "./components/Footer/FooterComponent.jsx"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const audioClips = [{ sound: Main, label: "Surprise" }];
+// const audioClips = [{ sound: Main }];
 
-class App extends Component {
+const App = () => {
   // TODO - this is the "main" component for our app, and it will include all the global state that we care about
   //  This should include things like:
   //  * the sidebar expanded state
@@ -35,39 +37,77 @@ class App extends Component {
   // TODO [STRETCH] - implement loading state and pass to FeedComponent
 
   // TODO - pass in expanded sidebar state to components that need to know about it/update it.
+  // const fetchCharacter = async (event) => {
+  //   if (event.key === "Enter") {
+  //     fetch(`${api.characters}?name=${query}`)
+  //       .then((resp) => resp.json())
+  //       .catch((error) => {
+  //         console.error("you spelt the name wrong! try again :)");
+  //         throw error;
+  //       })
+  //       .then((data) => {
+  //         setQuery("");
+  //         console.log(data);
+  //       });
+    // }
+  // };
 
-  SoundPlay = (src) => {
-    const sound = new Howl({
-      src
-    });
-    sound.play();
+
+  // SoundPlay = (src) => {
+  //   const sound = new Howl({
+  //     src
+  //   });
+  //   sound.play();
+  // };
+
+  // RenderButtonSound = () => {
+  //   return audioClips.map((soundObj, index) => {
+
+  //     return (
+  //         <div className = "soundButton"  >
+  //       <button type="button"class="btn btn-default btn-lg" key={index} onClick={() => this.SoundPlay(soundObj.sound)}>
+  //       <span class="glyphicon glyphicon-star" ></span> 
+  //         {/* {soundObj.label} where icon will be */}Click for a Surprise
+
+  //       </button></div>
+  //     );
+  //   });
+  // };
+
+  // togglePlay=(sound)=>{
+  //   return sound.playing() ? sound.pause() : sound.play();
+  //   };
+
+ 
+  //   Howler.volume(0.7);
+
+  const getData = () => {
+    return fetch("https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10").then(
+      (response) => {
+        return response.json();
+      }
+    );
   };
+  
+  const [feed, setFeed] = useState([]);
+  const [query, setQuery] = useState("");
 
-  RenderButtonSound = () => {
-    return audioClips.map((soundObj, index) => {
-      return (
-          <div className = "soundButton"  >
-        <button  key={index} onClick={() => this.SoundPlay(soundObj.sound)}>
-          {soundObj.label}
-        </button></div>
-      );
-    });
-  };
-
-  togglePlay=(sound)=>{
-    return sound.playing() ? sound.pause() : sound.play();
-    };
-
-  render() {
-    Howler.volume(0.7);
     return (
       <div className="app">
-        <HeaderComponent />
-        <SidebarComponent />
-        <FeedComponent />
-        {this.RenderButtonSound()}
+        <HeaderComponent query={query} setQuery={setQuery}/>
+        <SidebarComponent query={query} setQuery={setQuery}/>
+        <button
+          onClick={() => {
+            getData().then((response) => setFeed(response));
+          }}
+        >
+          fetch
+        </button>
+        <FeedComponent feed={feed}/>
+        <FooterComponent/>
+        {/* {this.RenderButtonSound()} */}
       </div>
     );
   }
-}
+
 export default App;
