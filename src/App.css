@@ -2,5 +2,10 @@
   height: 100%;
   margin: 10px;
   padding: 10px;
-  border: 1px dotted indigo;
+  /* border: 1px dotted indigo; */
 }
+.soundButton{
+  position:absolute;
+  top:30px;
+}
+

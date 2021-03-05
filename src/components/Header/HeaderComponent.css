@@ -1,7 +1,28 @@
 /* TODO add some general header styles */
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300&display=swap");
 
 .header {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid red;
+    margin: 12px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size:larger;
+    font-family: "Khand", serif;
+}
+.search-bar{
+    text-align: right ;
+    margin:-10px;
+   
+}
+
+input[type=text]{
+    transition: width 0.6s ease-in-out;
+}
+input[type=text]:focus{
+    width: 20%;
+}
+.button{
+    text-align: left;
+}
+.filter{
+    text-align:left;
 }

@@ -1,6 +1,16 @@
 /* TODO add feed styles */
+
 .feed {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid green;
+  margin: 100px;
+  margin-right: 0px;
+  padding: 10px;
+  float: right;
+  min-height: 800px;
+  min-width: 1000px;
+  overflow: hidden;
+  border: 1px solid green;
+  background-image: url("../Images/GoT.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: 0.4 ease;
 }
