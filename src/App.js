@@ -1,8 +1,9 @@
 import './App.css';
 import React from 'react';
 import { HeaderComponent } from './components/Header/HeaderComponent';
-import { SidebarComponent } from './components/Sidebar/SidebarComponent';
 import { FeedComponent } from './components/Feed/FeedComponent';
+import SidebarComponent from './components/Sidebar/SidebarComponent';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 
@@ -35,9 +36,11 @@ function App() {
     // TODO - pass in expanded sidebar state to components that need to know about it/update it.
     return (
         <div className="app">
+            <Router>
             <HeaderComponent />
-            <SidebarComponent />
+            <SidebarComponent/>
             <FeedComponent />
+            </Router>
         </div>
     );
 }

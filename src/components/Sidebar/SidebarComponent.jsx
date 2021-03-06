@@ -1,20 +1,71 @@
-import React from 'react'
-import './SidebarComponent.css';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { SidebarData } from './SidebarData';
+import SubMenuComponent from './SubMenuComponent';
+import { IconContext } from 'react-icons/lib';
 
-// TODO - make sure SidebarComponent is expecting the right props!
-export const SidebarComponent = () => {
+const Nav = styled.div `
+background: #15171c;
+height: 80px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+`;
 
-    // TODO - reflect expanded/collapsed state in sidebar's className
-    // TODO - make sure the classNames in the SidebarComponent.css match up with the classes you choose!
-    return <div className={'sidebar'}>
-        {/* TODO - flesh out this component to include all controls for configuring your data retrieval.
-             This must include the category (books/characters/houses)
-             [STRETCH] Feel free to add anything else you want, for example:
-                * a dropdown to select number of items you want to retrieve
-                * a search bar to search for a particular item
-             You could even change what you can see in the search bar based on what you are searching for.
-             E.g add a dropdown to determine which field you're searching on ("name"/"title"/"alias")
-        */}
-        I'm the sidebar component
-    </div>
-};
+const NavIcon = styled(Link)`
+margin-left: 2rem;
+font-size: 2rem;
+height: 80px;
+justify-content: flex-start;
+align-items: center;
+`;
+
+const SideBarNav = styled.nav`
+    background: #15171c;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+    transition: 350ms;
+    z-index: 10;
+`;
+
+const SideBarWrap = styled.div `
+width: 100%;
+`;
+
+const Sidebar = () => {
+    const [sidebar, setSideBar] = useState(false)
+
+    const showSideBar = () => setSideBar(!sidebar)
+    return (
+        <>
+        <IconContext.Provider value={{ color: '#fff'}}>
+            <Nav>
+                <NavIcon to='#'>
+                  <FaIcons.FaBars onClick={showSideBar} />
+                </NavIcon>
+            </Nav>
+            <SideBarNav sidebar={sidebar}>
+                <SideBarWrap>
+                <NavIcon to='#'>
+                 <AiIcons.AiOutlineClose onClick={showSideBar}/>
+                </NavIcon>
+                {SidebarData.map((item, index) => {
+                    return <SubMenuComponent item={item} key={index} />;
+
+                })}
+                </SideBarWrap>
+            </SideBarNav>
+        </IconContext.Provider>
+        </>
+    )
+}
+
+export default Sidebar
