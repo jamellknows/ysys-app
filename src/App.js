@@ -41,6 +41,7 @@ function App() {
             <SidebarComponent/>
             <FeedComponent />
             </Router>
+            
         </div>
     );
 }

@@ -40,7 +40,7 @@ const SideBarWrap = styled.div `
 width: 100%;
 `;
 
-const Sidebar = () => {
+const SidebarComponenet = () => {
     const [sidebar, setSideBar] = useState(false)
 
     const showSideBar = () => setSideBar(!sidebar)
@@ -68,4 +68,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar
+export default SidebarComponenet
