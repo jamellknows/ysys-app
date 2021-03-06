@@ -8,31 +8,12 @@ import ListGroup from "react-bootstrap/ListGroup";
 
         */
 // TODO - make sure HeaderComponent is expecting the right props (if any)!
-const api = {
-  characters: "https://www.anapioficeandfire.com/api/characters",
-};
+// const api = {
+//   characters: "https://www.anapioficeandfire.com/api/characters",
+// };
 
 export const HeaderComponent = ({ query, setQuery }) => {
   
-  // const renderCard = (query, index) => {
-  //   return (
-  //     <Card style={{ width: "18rem" }} key={index}>
-  //       <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-  //       <Card.Body>
-  //         <Card.Title>{query.name}</Card.Title>
-  //         <Card.Text>{query.titles}</Card.Text>
-  //       </Card.Body>
-  //       <CardGroup>
-  //         <ListGroup className="list-group-flush">
-  //           <ListGroup.Item>{query.gender}</ListGroup.Item>
-  //           <ListGroup.Item>{query.born}</ListGroup.Item>
-  //           <ListGroup.Item>{query.IsAlive}</ListGroup.Item>
-  //         </ListGroup>
-  //       </CardGroup>
-  //     </Card>
-  //   );
-  // };
-
   return (
     <header className={"header"}>
       <input
@@ -43,38 +24,6 @@ export const HeaderComponent = ({ query, setQuery }) => {
             onChange={(e) => setQuery(e.target.value)}
             value={query}
           />
-      {/* {}
-      <div className="search-bar">
-        <div>
-          <input
-            type="text"
-            className="searchbar"
-            placeholder="Enter character name..."
-            autoComplete="off"
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyPress={fetchCharacter}
-            value={query}
-          />
-        </div>
-      </div> */}
-      {/* <div className="nameSearch">
-        {((query, index) => (
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-            <Card.Body>
-              <Card.Title>{query.name}</Card.Title>
-              <Card.Text>{query.titles}</Card.Text>
-            </Card.Body>
-            <CardGroup>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item>{query.gender}</ListGroup.Item>
-              <ListGroup.Item>{query.born}</ListGroup.Item>
-              <ListGroup.Item>{query.IsAlive}</ListGroup.Item>
-            </ListGroup>
-            </CardGroup>
-          </Card>
-          ))}
-      </div> */}
       Game of Thrones React App
     </header>
   );
