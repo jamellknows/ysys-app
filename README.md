@@ -28,6 +28,8 @@ https://nodejs.org/en/download and download the appropriate installer.
 
 * Install the dependencies: `yarn install`
 
+* Install : `npm i howler --save` && `yarn add bootstrap@4.6.0`
+
 * Start the app: `yarn start`
 
 * Navigate to `localhost:3000` to view the app.
