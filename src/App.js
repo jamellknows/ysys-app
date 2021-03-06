@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
-import Main from "./audioClips/Main.mp3";
+// import Main from "./audioClips/Main.mp3";
 // import { Howl, Howler } from "howler";
 import {FooterComponent} from "./components/Footer/FooterComponent.jsx"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ import {FooterComponent} from "./components/Footer/FooterComponent.jsx"
 const App = () => {
   // TODO - this is the "main" component for our app, and it will include all the global state that we care about
   //  This should include things like:
-  //  * the sidebar expanded state
+  //  * the sidebahttps://prod.liveshare.vsengsaas.visualstudio.com/join?68D521351BD99FEEBEEBD7EBCF80D5D41C91r expanded state
   //  * the selected category (books/characters/houses)
   //  * the feed results
 
@@ -88,13 +88,16 @@ const App = () => {
       }
     );
   };
+
   
   const [feed, setFeed] = useState([]);
   const [query, setQuery] = useState("");
 
     return (
       <div className="app">
+        <searchbar>
         <HeaderComponent query={query} setQuery={setQuery}/>
+        </searchbar>
         <SidebarComponent query={query} setQuery={setQuery}/>
         <button
           onClick={() => {
