@@ -22,7 +22,6 @@ export const CharacterCard = ({ character }) => {
             <ListGroup className="list-group-flush">
               <ListGroup.Item>{character.gender}</ListGroup.Item>
               <ListGroup.Item>{character.born}</ListGroup.Item>
-              <ListGroup.Item>{character.IsAlive}</ListGroup.Item>
             </ListGroup>
           </CardGroup>
         </Card>

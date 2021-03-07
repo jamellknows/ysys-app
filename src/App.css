@@ -5,8 +5,7 @@
   
   /* border: 1px dotted indigo; */
 }
-.soundButton{
-  position:absolute;
-  top:30px;
+.fetchButton{
+  float:right;
 }
 

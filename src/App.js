@@ -3,17 +3,19 @@ import React, { useState } from "react";
 import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
-// import Main from "./audioClips/Main.mp3";
-// import { Howl, Howler } from "howler";
-import {FooterComponent} from "./components/Footer/FooterComponent.jsx"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FooterComponent } from "./components/Footer/FooterComponent.jsx";
+import Music from "./components/Music/Music.jsx";
 
-// const audioClips = [{ sound: Main }];
+const api = {
+  books: "https://www.anapioficeandfire.com/api/books",
+  houses: "https://www.anapioficeandfire.com/api/houses",
+  characters: "https://www.anapioficeandfire.com/api/characters",
+};
 
 const App = () => {
   // TODO - this is the "main" component for our app, and it will include all the global state that we care about
   //  This should include things like:
-  //  * the sidebahttps://prod.liveshare.vsengsaas.visualstudio.com/join?68D521351BD99FEEBEEBD7EBCF80D5D41C91r expanded state
+  //  * the sidebar expanded state
   //  * the selected category (books/characters/houses)
   //  * the feed results
 
@@ -37,8 +39,19 @@ const App = () => {
   // TODO [STRETCH] - implement loading state and pass to FeedComponent
 
   // TODO - pass in expanded sidebar state to components that need to know about it/update it.
-  // const fetchCharacter = async (event) => {
-  //   if (event.key === "Enter") {
+
+  const getData = () => {
+    return fetch(
+      `https://www.anapioficeandfire.com/api/characters?name=jon%20snow`
+    ).then((response) => {
+      return response.json();
+    });
+  };
+
+  const [feed, setFeed] = useState([]);
+  const [query, setQuery] = useState("");
+
+  //    const fetchCharacter = async (text) => {
   //     fetch(`${api.characters}?name=${query}`)
   //       .then((resp) => resp.json())
   //       .catch((error) => {
@@ -49,68 +62,26 @@ const App = () => {
   //         setQuery("");
   //         console.log(data);
   //       });
-    // }
   // };
 
+  return (
+    <div className="app">
+      <HeaderComponent query={query} setQuery={setQuery} />
+      <SidebarComponent query={query} setQuery={setQuery} />
+      <button
+        className="fetchButton"
+        onClick={() => {
+          getData().then((response) => setFeed(response));
+        }}
+      >
+        fetch
+      </button>
 
-  // SoundPlay = (src) => {
-  //   const sound = new Howl({
-  //     src
-  //   });
-  //   sound.play();
-  // };
-
-  // RenderButtonSound = () => {
-  //   return audioClips.map((soundObj, index) => {
-
-  //     return (
-  //         <div className = "soundButton"  >
-  //       <button type="button"class="btn btn-default btn-lg" key={index} onClick={() => this.SoundPlay(soundObj.sound)}>
-  //       <span class="glyphicon glyphicon-star" ></span> 
-  //         {/* {soundObj.label} where icon will be */}Click for a Surprise
-
-  //       </button></div>
-  //     );
-  //   });
-  // };
-
-  // togglePlay=(sound)=>{
-  //   return sound.playing() ? sound.pause() : sound.play();
-  //   };
-
- 
-  //   Howler.volume(0.7);
-
-  const getData = () => {
-    return fetch("https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10").then(
-      (response) => {
-        return response.json();
-      }
-    );
-  };
-
-  
-  const [feed, setFeed] = useState([]);
-  const [query, setQuery] = useState("");
-
-    return (
-      <div className="app">
-        <searchbar>
-        <HeaderComponent query={query} setQuery={setQuery}/>
-        </searchbar>
-        <SidebarComponent query={query} setQuery={setQuery}/>
-        <button
-          onClick={() => {
-            getData().then((response) => setFeed(response));
-          }}
-        >
-          fetch
-        </button>
-        <FeedComponent feed={feed}/>
-        <FooterComponent/>
-        {/* {this.RenderButtonSound()} */}
-      </div>
-    );
-  }
+      <FeedComponent feed={feed} />
+      <FooterComponent />
+      <Music />
+    </div>
+  );
+};
 
 export default App;
