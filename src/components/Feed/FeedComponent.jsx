@@ -16,7 +16,7 @@ export const FeedComponent = ({ feed }) => {
       
         {feed.length === 0 ? <div>Nothing to see</div> : feed.map(character => {
                 return <CharacterCard character={character} />})}
-          {
+          {/* {
             feed.length === 0 ? <div></div>:feed.map(book => {
                 return <BookCard book={book} />
                         
@@ -27,7 +27,7 @@ export const FeedComponent = ({ feed }) => {
                 return <HouseCard house={house} />
                         
             })
-        }
+        } */}
         {/* TODO [STRETCH] - update this list to be a list/grid of STRETCH_Cards */}
    </div> )
    

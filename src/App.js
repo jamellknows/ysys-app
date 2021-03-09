@@ -4,7 +4,6 @@ import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
 import { FooterComponent } from "./components/Footer/FooterComponent.jsx";
-import Music from "./components/Music/Music.jsx";
 
 const api = {
   books: "https://www.anapioficeandfire.com/api/books",
@@ -31,7 +30,7 @@ const App = () => {
 
   // To get started:
   // TODO - add in an expanded state/setState
-  // TODO - add in a feedResults state/setState
+  // TODO - add in a feedResults state/setState - done
   // (See cheat sheet for useState example)
 
   // TODO - import getData() from api (you will need to write this function)
@@ -42,7 +41,7 @@ const App = () => {
 
   const getData = () => {
     return fetch(
-      `https://www.anapioficeandfire.com/api/characters?name=jon%20snow`
+      `https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10`
     ).then((response) => {
       return response.json();
     });
@@ -51,22 +50,34 @@ const App = () => {
   const [feed, setFeed] = useState([]);
   const [query, setQuery] = useState("");
 
-  //    const fetchCharacter = async (text) => {
-  //     fetch(`${api.characters}?name=${query}`)
-  //       .then((resp) => resp.json())
-  //       .catch((error) => {
-  //         console.error("you spelt the name wrong! try again :)");
-  //         throw error;
-  //       })
-  //       .then((data) => {
-  //         setQuery("");
-  //         console.log(data);
-  //       });
-  // };
+  const search = (query) => {
+    fetch(`${api.characters}?name=${query}`)
+      .then((resp) => resp.json())
+      .catch((error) => {
+        Window.alert("you spelt the name wrong! try again :)");
+        throw error;
+      })
+      .then((data) => {
+        setQuery("");
+        console.log(data);
+      });
+  };
 
   return (
     <div className="app">
-      <HeaderComponent query={query} setQuery={setQuery} />
+      <HeaderComponent
+        query={query}
+        setQuery={setQuery}
+      />
+      <input
+        className="button"
+        type="submit"
+        value="SEARCH"
+        onClick={() => {
+          search(query);
+        }}
+      ></input>
+
       <SidebarComponent query={query} setQuery={setQuery} />
       <button
         className="fetchButton"
@@ -79,7 +90,6 @@ const App = () => {
 
       <FeedComponent feed={feed} />
       <FooterComponent />
-      <Music />
     </div>
   );
 };

@@ -28,7 +28,7 @@ const Music = () => {
         console.log("isPlaying", isPlaying);
       }}
     >
-      Click me for surprise
+      Click me for a surprise
     </button>
   );
 };

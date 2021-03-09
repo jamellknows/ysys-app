@@ -3,4 +3,6 @@
     align-items: flex-end;
     position:absolute;
     right:0;
+    font-size:small;
+    border-radius: 1rem;
   }

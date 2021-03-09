@@ -1,15 +1,12 @@
 import React from "react";
 import "./FooterComponent.css";
-
+import Music from "../Music/Music";
 
 export const FooterComponent = () => {
-
-
-return (
-    <footer className = {"footer"}> 
-
-     Created by Meltem, Bev, Jamell and Haze
-     
+  return (
+    <footer className={"footer"}>
+      <Music />
+      Created by Meltem, Bev, Jamell and Haze
     </footer>
-
-)}
+  );
+};
