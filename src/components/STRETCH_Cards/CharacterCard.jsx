@@ -3,8 +3,6 @@ import "./Card.css";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-
-
 // TODO - create a component which displays information about Characters
 
 // TODO - make sure CharacterCard is expecting the right props!

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
@@ -49,30 +49,35 @@ const App = () => {
   // };
 
   const [feed, setFeed] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   // fetch function for entering a name
-  //moved from headercomponent 
+  //moved from header component 
    const search = (query) => {
     return fetch(`${api.characters}?name=${query}`)
       .then((resp) => {
-      return resp.json().then((data) => {
-        setQuery("");
-        console.log(data);
-       });
+      return resp.json()
+      .then(console.log(resp))
       })
   };
 
-  useEffect(() => {
-    search(query).then((results) => setFeed(results));
-  },[query]);
+  // useEffect(() => {
+  //   search(query).then((results) => setFeed(results));
+  // },[query]);
   
-
   return (
     <div className="app">
       <HeaderComponent query={query} setQuery={setQuery} />
      
       <SidebarComponent query={query} setQuery={setQuery} />
+      <input
+        className="button"
+        type="submit"
+        value="SEARCH"
+        onClick={() => { 
+        search(query).then((response) => setFeed(response));
+        }}
+      ></input>
 
       {/* <button
         className="fetchButton"

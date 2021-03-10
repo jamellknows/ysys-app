@@ -19,9 +19,9 @@
   margin: -10px;
   margin-top:6px;
   float: right;
-  width: 170px;
+  width: 290px;
   border-radius: 1rem;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 input[type="text"] {
@@ -36,12 +36,14 @@ input[type="text"]:focus {
 }
 .button {
   margin: -7px;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-top: -128.8px;
+  margin-right: 9.3px;
   float: right;
   border-radius: 1rem;
   font-size: 17px;
   text-align: right;
+  font-family: "Khand", serif;
+  font-size:20px;
 }
 .button:hover {
   background-color: rgb(189, 213, 216);

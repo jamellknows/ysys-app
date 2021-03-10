@@ -6,10 +6,3 @@
   padding: 10px;
   background-image: url("./components/Images/king.png");
 }
-.button {
-  z-index: -1;
-  float: right;
-  top:0px;
-  border-radius: 1rem;
-  font-size: 15px;
-}

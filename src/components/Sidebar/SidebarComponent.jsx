@@ -62,10 +62,10 @@ export function SidebarComponent({ query, setQuery }) {
           <NavDropdown.Divider />
         </NavDropdown>
       </Nav>
-      <Navbar.Toggle
+      {/* <Navbar.Toggle
         aria-controls="responsive-navbar-nav"
         className="navbar-toggler"
-      />
+      /> */}
       <Navbar.Collapse
         id="responsive-navbar-nav"
         className="collapse"

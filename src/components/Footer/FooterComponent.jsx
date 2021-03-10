@@ -6,7 +6,7 @@ export const FooterComponent = () => {
   return (
     <footer className={"footer"}>
       <Music />
-      Created by Meltem, Bev, Jamell and Haze
+      Created by Meltem, Bev, Haze and Jamell
     </footer>
   );
 };

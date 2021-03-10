@@ -33,7 +33,7 @@ export const HeaderComponent = ({ query, setQuery }) => {
   //add comment here tomo
   const callSearchFunction = (e) => {
     e.preventDefault();
-    query.search(query);
+    setQuery(query);
     resetQueryField();
   };
 
@@ -61,14 +61,14 @@ export const HeaderComponent = ({ query, setQuery }) => {
           autoComplete="off"
           onChange={handleSearchInputChange}
         />
-         <input
+         {/* <input
         className="button"
         type="submit"
         value="SEARCH"
         onClick={() => {
           setQuery(query);
         }}
-      ></input>
+      ></input> */}
       </div>
       Game of Thrones React App
     </header>
