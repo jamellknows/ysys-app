@@ -10,11 +10,11 @@ import "../Images/jon.png"
 // TODO - make sure HeaderComponent is expecting the right props (if any)!
 
 
-const api = {
-  books: "https://www.anapioficeandfire.com/api/books",
-  houses: "https://www.anapioficeandfire.com/api/houses",
-  characters: "https://www.anapioficeandfire.com/api/characters",
-};
+// const api = {
+//   books: "https://www.anapioficeandfire.com/api/books",
+//   houses: "https://www.anapioficeandfire.com/api/houses",
+//   characters: "https://www.anapioficeandfire.com/api/characters",
+// };
 
 
 
@@ -37,16 +37,16 @@ export const HeaderComponent = ({ query, setQuery }) => {
     resetQueryField();
   };
 
-  //fetch function for entering a name 
-  const search = (query) => {
-    return fetch(`${api.characters}?name=${query}`)
-      .then((resp) => {
-      return resp.json().then((data) => {
-        setQuery("");
-        console.log(data);
-       });
-      })
-  };
+  // //fetch function for entering a name 
+  // const search = (query) => {
+  //   return fetch(`${api.characters}?name=${query}`)
+  //     .then((resp) => {
+  //     return resp.json().then((data) => {
+  //       setQuery("");
+  //       console.log(data);
+  //      });
+  //     })
+  // };
 
 
   //returns searcbar and button 
@@ -66,7 +66,7 @@ export const HeaderComponent = ({ query, setQuery }) => {
         type="submit"
         value="SEARCH"
         onClick={() => {
-          search(query);
+          setQuery(query);
         }}
       ></input>
       </div>

@@ -14,8 +14,8 @@ export const FeedComponent = ({ feed }) => {
  
     return (<div className={'feed'}>
       
-        {feed.length === 0 ? <div>Nothing to see</div> : feed.map(character => {
-                return <CharacterCard character={character} />})}
+         {feed.length === 0 ? <div>Nothing to see</div> : feed.map(character => {
+                return <CharacterCard character={character} />})} 
           {/* {
             feed.length === 0 ? <div></div>:feed.map(book => {
                 return <BookCard book={book} />

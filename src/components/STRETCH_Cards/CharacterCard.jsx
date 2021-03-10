@@ -14,7 +14,7 @@ export const CharacterCard = ({ character }) => {
     <Card style={{ width: "18rem" }}>
       <Card.Body>
         <Card.Title>{character.name}</Card.Title>
-        <Card.Text>{character.titles}</Card.Text>
+        <Card.Text>{character.aliases}</Card.Text>
       </Card.Body>
       <CardGroup>
         
