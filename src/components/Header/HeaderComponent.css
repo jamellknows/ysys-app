@@ -36,7 +36,7 @@ input[type="text"]:focus {
 }
 .button {
   margin: -7px;
-  margin-top: -128.8px;
+  margin-top: -72px;
   margin-right: 9.3px;
   float: right;
   border-radius: 1rem;
@@ -53,4 +53,12 @@ input[type="text"]:focus {
   background-color: rgb(189, 213, 216);
   box-shadow: 0 3px #666;
   transform: translateY(2px);
+}
+
+@media screen and (min-width: 993px) and (max-width: 1600px) {
+  .button{
+    margin: -7px;
+    margin-top: -72px;
+    margin-right: 9.3px;
+  }
 }

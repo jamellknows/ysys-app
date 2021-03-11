@@ -4,7 +4,9 @@ import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
 import { FooterComponent } from "./components/Footer/FooterComponent.jsx";
-import { CharacterCard } from "./components/STRETCH_Cards/CharacterCard";
+import { getData } from "./api/api";
+
+
 
 const api = {
   books: "https://www.anapioficeandfire.com/api/books",
@@ -50,6 +52,9 @@ const App = () => {
 
   const [feed, setFeed] = useState([]);
   const [query, setQuery] = useState('');
+  const [sidebarSelection, setSidebarSelection] = useState("characters");
+  const [pageSize, setPageSize] = useState(10);
+
 
   // fetch function for entering a name
   //moved from header component 
@@ -62,41 +67,41 @@ const App = () => {
   };
 
   //tried putting get10C function here and it displays with the use effect but not on event.key. stress
-  const get10C = () => {
-    return fetch(
-      `https://www.anapioficeandfire.com/api/characters?page=1&pageSize=25`
-    ).then((response) => {
-      return response.json().then(console.log(response));
-    });
-  };
+  // const get10C = (sidebarSelection) => {
+  //   return fetch(
+  //     `https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10`
+  //   ).then((response) => {
+  //     return response.json();
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   get10C().then((results) => setFeed(results));
+  // },[sidebarSelection]);
 
   useEffect(() => {
-    get10C(query).then((results) => setFeed(results));
-  },[query]);
-  
+    const fetchData = async () => {
+      const data = await getData(sidebarSelection, pageSize)
+      setFeed(data)
+    }
+    fetchData()
+  },[sidebarSelection, pageSize]);
+
+
   return (
     <div className="app">
       <HeaderComponent query={query} setQuery={setQuery} />
-     
-      <SidebarComponent query={query} setQuery={setQuery} />
-      <input
+       <input
         className="button"
         type="submit"
         value="SEARCH"
         onClick={() => { 
         search(query).then((response) => setFeed(response));
         }}
-      ></input>
-
-      {/* <button
-        className="fetchButton"
-        onClick={() => {
-          getData().then((response) => setFeed(response));
-        }}
-      >
-        fetch
-      </button> */}
-
+      ></input>  
+      <SidebarComponent 
+      sidebarSelection={sidebarSelection} setSidebarSelection={setSidebarSelection} pageSize={pageSize} setPageSize={setPageSize} />
+     
       <FeedComponent feed={feed} />
       <FooterComponent />
     </div>

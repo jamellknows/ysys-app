@@ -11,11 +11,14 @@ import {HouseCard} from '../STRETCH_Cards/HouseCard.jsx';
     // feed here should be an array of characters/houses/books
 // TODO - make sure FeedComponent is expecting the right props!
 export const FeedComponent = ({ feed }) => {
+
+    const makeKey = (url) => url.slice(url.lastIndexOf("/", url.lastIndexOf("/") - 1) + 1);
  
     return (<div className={'feed'}>
+        <div className="card-list" >
       
-         {feed.length === 0 ? <div>Nothing to see</div> : feed.map(character => {
-                return <CharacterCard character={character} />})} 
+         {feed.length === 0 ? <div >Nothing to see</div> : feed.map(character => {
+                return <CharacterCard className="card" character={character} key={makeKey(character.url)} />})} 
            {/* {
             feed.length === 0 ? <div></div>:feed.map(book => {
                 return <BookCard book={book} />
@@ -29,6 +32,7 @@ export const FeedComponent = ({ feed }) => {
             })
         }  */}
         {/* TODO [STRETCH] - update this list to be a list/grid of STRETCH_Cards */}
+        </div>
    </div> )
    
 };
