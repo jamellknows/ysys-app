@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { HeaderComponent } from "./components/Header/HeaderComponent";
 import { SidebarComponent } from "./components/Sidebar/SidebarComponent";
 import { FeedComponent } from "./components/Feed/FeedComponent";
@@ -61,9 +61,18 @@ const App = () => {
       })
   };
 
-  // useEffect(() => {
-  //   search(query).then((results) => setFeed(results));
-  // },[query]);
+  //tried putting get10C function here and it displays with the use effect but not on event.key. stress
+  const get10C = () => {
+    return fetch(
+      `https://www.anapioficeandfire.com/api/characters?page=1&pageSize=25`
+    ).then((response) => {
+      return response.json().then(console.log(response));
+    });
+  };
+
+  useEffect(() => {
+    get10C(query).then((results) => setFeed(results));
+  },[query]);
   
   return (
     <div className="app">

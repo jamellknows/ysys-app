@@ -5,7 +5,6 @@ import "../Images/jon.png"
 
 /* TODO [STRETCH] - add in any controls that you'd like in your header
              E.g, a search bar, a toggle button for the side bar, or just a plain header!
-
         */
 // TODO - make sure HeaderComponent is expecting the right props (if any)!
 

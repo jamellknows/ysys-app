@@ -9,7 +9,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 export const CharacterCard = ({ character }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "20rem" }}>
       <Card.Body>
         <Card.Title>{character.name}</Card.Title>
         <Card.Text>{character.aliases}</Card.Text>
