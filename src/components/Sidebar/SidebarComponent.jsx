@@ -1,20 +1,42 @@
-import React from 'react'
-import './SidebarComponent.css';
+import React from "react";
+import "./SidebarComponent.css";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-// TODO - make sure SidebarComponent is expecting the right props!
-export const SidebarComponent = () => {
-
-    // TODO - reflect expanded/collapsed state in sidebar's className
-    // TODO - make sure the classNames in the SidebarComponent.css match up with the classes you choose!
-    return <div className={'sidebar'}>
-        {/* TODO - flesh out this component to include all controls for configuring your data retrieval.
-             This must include the category (books/characters/houses)
-             [STRETCH] Feel free to add anything else you want, for example:
-                * a dropdown to select number of items you want to retrieve
-                * a search bar to search for a particular item
-             You could even change what you can see in the search bar based on what you are searching for.
-             E.g add a dropdown to determine which field you're searching on ("name"/"title"/"alias")
-        */}
-        I'm the sidebar component
-    </div>
-};
+export function SidebarComponent({
+  sidebarSelection,
+  setSidebarSelection,
+  pageSize,
+  setPageSize,
+}) {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="" onClick={() => setSidebarSelection("characters")}>
+            Characters
+          </Nav.Link>
+          <Nav.Link href="" onClick={() => setSidebarSelection("books")}>
+            Books
+          </Nav.Link>
+          <Nav.Link href="" onClick={() => setSidebarSelection("houses")}>
+            Houses
+          </Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="" onClick={() => setPageSize(10)}>
+              10
+            </NavDropdown.Item>
+            <NavDropdown.Item href="" onClick={() => setPageSize(25)}>
+              25
+            </NavDropdown.Item>
+            <NavDropdown.Item href="" onClick={() => setPageSize(50)}>
+              50
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}

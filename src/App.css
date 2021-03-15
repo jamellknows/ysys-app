@@ -1,6 +1,19 @@
 .app {
+  content: "";
   height: 100%;
   margin: 10px;
   padding: 10px;
-  border: 1px dotted indigo;
+  background-image: url("./components/Images/king.png");
+}
+
+.app.houses {
+  background-image: url("./components/Images/houses.jpg");
+}
+
+.app.books {
+  background-image: url("./components/Images/books.png");
+}
+
+.app.characters {
+  background-image: url("./components/Images/characters.png");
 }

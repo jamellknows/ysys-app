@@ -1,12 +1,27 @@
-import React from 'react';
-import './HeaderComponent.css';
+import React from "react";
+import "./HeaderComponent.css";
+import "../Images/jon.png";
 
-// TODO - make sure HeaderComponent is expecting the right props (if any)!
-export const HeaderComponent = () => {
-    return <header className={'header'}>
-        {/* TODO [STRETCH] - add in any controls that you'd like in your header
-             E.g, a search bar, a toggle button for the side bar, or just a plain header!
-        */}
-        I'm the header component
+export const HeaderComponent = ({ query, setQuery }) => {
+  // //function for onchange instead of writing e.target.value
+  const handleSearchInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  //returns searcbar and button
+  return (
+    <header className={"header"}>
+      <div>
+        <input
+          value={query}
+          type="text"
+          className="searchbar"
+          placeholder="...Enter character name"
+          autoComplete="off"
+          onChange={handleSearchInputChange}
+        />
+      </div>
+      Game of Thrones React App
     </header>
+  );
 };

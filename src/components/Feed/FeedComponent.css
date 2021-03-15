@@ -1,6 +1,33 @@
 /* TODO add feed styles */
+
 .feed {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid green;
+  margin: 100px;
+  margin-top: 50px;
+  /* margin-right:10px; */
+  padding: 10px;
+  min-height: 1000px;
+  min-width: 1500px;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-image: url("../Images/background.png");
+  background-size: contain;
+  background-position: center;
+  transition: 0.4 ease;
+}
+
+.card-list {
+  margin: 0.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 993px) and (max-width: 1600px) {
+  .feed {
+    min-height: 900px;
+    min-width: 1000px;
+    /* background-position: center;
+    background-size:cover; */
+  }
 }
