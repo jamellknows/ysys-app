@@ -10,19 +10,16 @@ import ListGroup from "react-bootstrap/ListGroup";
 export const HouseCard = ({house}) => {
 
     return (
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+        <Card style={{ width: "20rem" }}>
           <Card.Body>
-            <Card.Title>{house.name}</Card.Title>
+            <Card.Title><b>Title: </b>{house.name}</Card.Title>
           </Card.Body>
           <CardGroup>
             <ListGroup className="list-group-flush">
-              <ListGroup.Item>{house.region}</ListGroup.Item>
-              <ListGroup.Item>{house.coatOfArms}</ListGroup.Item>
-              <ListGroup.Item>{house.words}</ListGroup.Item>
-              <ListGroup.Item>{house.seats}</ListGroup.Item>
-              <ListGroup.Item>{house.currentLord}</ListGroup.Item>
-              <ListGroup.Item>{house.heir}</ListGroup.Item>
+              <ListGroup.Item><b>Region: </b>{house.region}</ListGroup.Item>
+              <ListGroup.Item><b>Coat of Arms: </b>{house.coatOfArms}</ListGroup.Item>
+              <ListGroup.Item><b>Slogan: </b>{house.words}</ListGroup.Item>
+              <ListGroup.Item><b>Seats: </b>{house.seats}</ListGroup.Item>
             </ListGroup>
           </CardGroup>
         </Card>

@@ -15,5 +15,12 @@
     transition: 4s ease;
     position: fixed; 
     width: 100%;
+    opacity: 0.8;
+    font-family: "Khand", serif;
+    font-size: 20px;
+}
+
+.navbar .mr-auto {
+    font-weight: bold;
 }
 

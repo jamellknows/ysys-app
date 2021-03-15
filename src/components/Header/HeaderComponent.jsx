@@ -16,7 +16,7 @@ export const HeaderComponent = ({ query, setQuery }) => {
           value={query}
           type="text"
           className="searchbar"
-          placeholder="...Enter character name"
+          placeholder="Enter character name"
           autoComplete="off"
           onChange={handleSearchInputChange}
         />

@@ -79,7 +79,7 @@ const App = () => {
       ></input>  
       <SidebarComponent 
       sidebarSelection={sidebarSelection} setSidebarSelection={setSidebarSelection} pageSize={pageSize} setPageSize={setPageSize} />
-      <FeedComponent feed={feed} />
+      <FeedComponent feed={feed} sidebarSelection={sidebarSelection}/>
       <FooterComponent />
     </div>
   );

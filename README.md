@@ -38,4 +38,4 @@
 * Jamell - [jamellknows](https://github.com/jamellknows)
  
 ### Acknowledgments
-* Massive thank you to Brandwatch for setting the brief;  Sam Maclean ([MacleanS](https://github.com/MacleanS))once again for aiding us as our extra team member, Alastair Lockie ([larister]) (https://github.com/larister) for all his wonderful advice and tips on our functionality, and Lionel Smith for helping us with our final stretch!! :)
+* Massive thank you to Brandwatch for setting the brief;  Sam Maclean ([MacleanS](https://github.com/MacleanS))once again for aiding us as our extra team member, Alastair Lockie ([larister] (https://github.com/larister)) for all his wonderful advice and tips on our functionality, and Lionel Smith for helping us with our final stretch!! :)

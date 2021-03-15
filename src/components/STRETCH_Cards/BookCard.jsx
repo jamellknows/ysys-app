@@ -11,18 +11,17 @@ import ListGroup from "react-bootstrap/ListGroup";
 export const BookCard = ({book}) => {
 
     return (
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+        <Card style={{ width: "20rem" }}>
           <Card.Body>
-            <Card.Title>{book.name}</Card.Title>
-            <Card.Text>{book.isbn}</Card.Text>
+            <Card.Title><b>Book Title: </b>{book.name}</Card.Title>
+            <Card.Text><b>ISBN: </b>{book.isbn}</Card.Text>
           </Card.Body>
           <CardGroup>
             <ListGroup className="list-group-flush">
-              <ListGroup.Item>{book.authors}</ListGroup.Item>
-              <ListGroup.Item>{book.numberOfPages}</ListGroup.Item>
-              <ListGroup.Item>{book.mediaType}</ListGroup.Item>
-              <ListGroup.Item>{book.released}</ListGroup.Item>
+              <ListGroup.Item><b>Author: </b>{book.authors}</ListGroup.Item>
+              <ListGroup.Item><b>Number of Pages: </b>{book.numberOfPages}</ListGroup.Item>
+              <ListGroup.Item><b>Media Type: </b>{book.mediaType}</ListGroup.Item>
+              <ListGroup.Item><b>Release Date: </b>{book.released}</ListGroup.Item>
             </ListGroup>
           </CardGroup>
         </Card>

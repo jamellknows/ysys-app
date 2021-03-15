@@ -1,9 +1,12 @@
 .app {
   content: "";
   height: 100%;
-  margin: 10px;
+  /* margin: 10px; */
   padding: 10px;
-  background-image: url("./components/Images/king.png");
+  /* background-color: rgba(7, 5, 5, 0.932); */
+  background-size: 35%;
+  background-repeat: repeat; 
+  background-image: url("./components/Images/iceice.jpg"); 
 }
 
 .app.houses {
