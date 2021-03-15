@@ -18,16 +18,15 @@
 
 .card-list {
   margin: 0.2rem;
-  display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 @media screen and (min-width: 993px) and (max-width: 1600px) {
-  .feed{
+  .feed {
     min-height: 900px;
-    min-width: 1000px;  
+    min-width: 1000px;
     /* background-position: center;
     background-size:cover; */
   }

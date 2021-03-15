@@ -1,6 +1,5 @@
 /* TODO add some general header styles */
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300&display=swap");
-/* @import "../Images/jon.png"; */
 
 .header {
   margin: 12px;
@@ -17,7 +16,7 @@
 .searchbar {
   text-align: left;
   margin: -10px;
-  margin-top:6px;
+  margin-top: 6px;
   float: right;
   width: 290px;
   border-radius: 1rem;
@@ -43,7 +42,7 @@ input[type="text"]:focus {
   font-size: 17px;
   text-align: right;
   font-family: "Khand", serif;
-  font-size:20px;
+  font-size: 20px;
 }
 .button:hover {
   background-color: rgb(189, 213, 216);
@@ -56,7 +55,7 @@ input[type="text"]:focus {
 }
 
 @media screen and (min-width: 993px) and (max-width: 1600px) {
-  .button{
+  .button {
     margin: -7px;
     margin-top: -72px;
     margin-right: 9.3px;

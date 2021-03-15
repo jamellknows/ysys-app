@@ -6,8 +6,6 @@ import { FeedComponent } from "./components/Feed/FeedComponent";
 import { FooterComponent } from "./components/Footer/FooterComponent.jsx";
 import { getData } from "./api/api";
 
-
-
 const api = {
   books: "https://www.anapioficeandfire.com/api/books",
   houses: "https://www.anapioficeandfire.com/api/houses",
@@ -42,13 +40,6 @@ const App = () => {
 
   // TODO - pass in expanded sidebar state to components that need to know about it/update it.
 
-  // const getData = () => {
-  //   return fetch(
-  //     `https://www.anapioficeandfire.com/api/characters?823`
-  //   ).then((response) => {
-  //     return response.json();
-  //   });
-  // };
 
   const [feed, setFeed] = useState([]);
   const [query, setQuery] = useState('');
@@ -65,19 +56,6 @@ const App = () => {
       .then(console.log(resp))
       })
   };
-
-  //tried putting get10C function here and it displays with the use effect but not on event.key. stress
-  // const get10C = (sidebarSelection) => {
-  //   return fetch(
-  //     `https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10`
-  //   ).then((response) => {
-  //     return response.json();
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   get10C().then((results) => setFeed(results));
-  // },[sidebarSelection]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -101,7 +79,6 @@ const App = () => {
       ></input>  
       <SidebarComponent 
       sidebarSelection={sidebarSelection} setSidebarSelection={setSidebarSelection} pageSize={pageSize} setPageSize={setPageSize} />
-     
       <FeedComponent feed={feed} />
       <FooterComponent />
     </div>
