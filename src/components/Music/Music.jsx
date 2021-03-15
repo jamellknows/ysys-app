@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Main from "../audioClips/Main.mp3";
 import { Howl, Howler } from "howler";
 import "../Music/Music.css";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const audioClips = [{ sound: Main }];
 
@@ -27,9 +26,7 @@ const Music = () => {
         }
         console.log("isPlaying", isPlaying);
       }}
-    >
-      Click me for a surprise
-    </button>
+    >SOUND</button>
   );
 };
 

@@ -18,7 +18,7 @@ export function SidebarComponent({
           <Nav.Link href="" onClick={() => setSidebarSelection("characters")}>
             Characters
           </Nav.Link>
-          <Nav.Link href="" onClick={() => setSidebarSelection("books")}>
+          <Nav.Link className="books" href="" onClick={() => setSidebarSelection("books")}>
             Books
           </Nav.Link>
           <Nav.Link href="" onClick={() => setSidebarSelection("houses")}>

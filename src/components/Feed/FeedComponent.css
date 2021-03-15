@@ -2,7 +2,7 @@
 
 .feed {
   margin: 100px;
-  margin-top: 50px;
+  margin-top: 90px;
   /* margin-right:10px; */
   padding: 10px;
   min-height: 1000px;
@@ -10,9 +10,9 @@
   overflow: hidden;
   border: 2px solid black;
   border-radius: 1rem;
-  background-image: url("../Images/background.png");
+  background-image: url("../Images/books.png");
   background-size: contain;
-  background-position: center;
+  background-position: cover;
   transition: 0.4 ease;
 }
 
@@ -20,7 +20,8 @@
   margin: 0.2rem;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  grid-gap: 1rem;
 }
 
 @media screen and (min-width: 993px) and (max-width: 1600px) {
