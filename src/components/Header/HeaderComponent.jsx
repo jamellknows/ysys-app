@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import "./HeaderComponent.css";
-import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
-import ListGroup from "react-bootstrap/ListGroup";
-/* TODO [STRETCH] - add in any controls that you'd like in your header
-             E.g, a search bar, a toggle button for the side bar, or just a plain header!
-
-        */
-// TODO - make sure HeaderComponent is expecting the right props (if any)!
-// const api = {
-//   characters: "https://www.anapioficeandfire.com/api/characters",
-// };
+import "../Images/jon.png";
 
 export const HeaderComponent = ({ query, setQuery }) => {
-  
+  // //function for onchange instead of writing e.target.value
+  const handleSearchInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  //returns searcbar and button
   return (
     <header className={"header"}>
-      <input
-            type="text"
-            className="searchbar"
-            placeholder="Enter character name..."
-            autoComplete="off"
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-          />
+      <div>
+        <input
+          value={query}
+          type="text"
+          className="searchbar"
+          placeholder="Enter character name"
+          autoComplete="off"
+          onChange={handleSearchInputChange}
+        />
+      </div>
       Game of Thrones React App
     </header>
   );

@@ -2,17 +2,33 @@
 
 .feed {
   margin: 100px;
-  margin-top: -60px;
-  margin-right: 0px;
+  margin-top: 90px;
+  /* margin-right:10px; */
   padding: 10px;
-  float: right;
   min-height: 1000px;
   min-width: 1500px;
   overflow: hidden;
-  border: none;
+  border: 2px solid black;
   border-radius: 1rem;
-  background-image: url("../Images/GoT.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../Images/books.png");
+  background-size: contain;
+  background-position: cover;
   transition: 0.4 ease;
+}
+
+.card-list {
+  margin: 0.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  grid-gap: 1rem;
+}
+
+@media screen and (min-width: 993px) and (max-width: 1600px) {
+  .feed {
+    min-height: 900px;
+    min-width: 1000px;
+    /* background-position: center;
+    background-size:cover; */
+  }
 }

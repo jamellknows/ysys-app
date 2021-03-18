@@ -1,11 +1,26 @@
-.side-bar {
+/* .side-bar {
     height: 100% !important;
     display: flex;
-    flex-direction: column;
+    flex-direction: left;
     border-right: 1px solid;
     border-radius: 0;
     border-color: rgba(64, 194, 133, 0.693);
     background-color: rgb(255, 255, 255);
     transition: 2s ease;
+} */
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    transition: 4s ease;
+    position: fixed; 
+    width: 100%;
+    opacity: 0.8;
+    font-family: "Khand", serif;
+    font-size: 20px;
+}
+
+.navbar .mr-auto {
+    font-weight: bold;
 }
 

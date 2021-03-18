@@ -1,12 +1,22 @@
 .app {
+  content: "";
   height: 100%;
-  margin: 10px;
+  /* margin: 10px; */
   padding: 10px;
-  
-  /* border: 1px dotted indigo; */
-}
-.soundButton{
-  position:absolute;
-  top:30px;
+  /* background-color: rgba(7, 5, 5, 0.932); */
+  background-size: 35%;
+  background-repeat: repeat; 
+  background-image: url("./components/Images/iceice.jpg"); 
 }
 
+.app.houses {
+  background-image: url("./components/Images/houses.jpg");
+}
+
+.app.books {
+  background-image: url("./components/Images/books.png");
+}
+
+.app.characters {
+  background-image: url("./components/Images/characters.png");
+}

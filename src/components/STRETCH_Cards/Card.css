@@ -1,3 +1,8 @@
 /* TODO write some card styles */
 .card {
+    /* display:flex;
+    flex-wrap: wrap; */
+    opacity: 0.9;
+    padding: 0.5rem;
 }
+

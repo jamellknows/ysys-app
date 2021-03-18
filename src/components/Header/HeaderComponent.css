@@ -2,30 +2,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300&display=swap");
 
 .header {
-    margin: 12px;
-    padding-bottom: 10px;
-    text-align: left;
-    font-size: 40px;
-    font-family: "Khand", serif;
+  margin: 12px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-size: 40px;
+  color: aliceblue;
+  font-family: "Khand", serif;
+  background-image: url("../Images/jon2.png");
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 35%;
 }
-.searchbar{
-    text-align: left;
-    margin:-10px;
-    float:right;
-    width: 300px;
-    border-radius: 1rem;
-    font-size: 25px;
+.searchbar {
+  text-align: left;
+  margin: -10px;
+  margin-top: 6px;
+  float: right;
+  width: 290px;
+  border-radius: 1rem;
+  font-size: 25px;
+  background-color: rgb(204, 200, 200);
 }
 
-input[type=text]{
-    transition: width 0.6s ease-in-out;
+input[type="text"] {
+  transition: width 0.6s ease-out;
 }
-input[type=text]:focus{
-    width: 30%;
+input[type="text"]:focus {
+  width: 30%;
 }
-.button{
-    text-align: left;
+
+.filter {
+  text-align: left;
 }
-.filter{
-    text-align:left;
+.button {
+  margin: -7px;
+  margin-top: -72px;
+  margin-right: 9.3px;
+  float: right;
+  border-radius: 1rem;
+  font-size: 17px;
+  text-align: right;
+  font-family: "Khand", serif;
+  font-size: 20px;
+  background-color: rgb(200, 215, 218);
+}
+.button:hover {
+  color: white;
+  background-color: rgb(134, 60, 55);
+}
+
+.button:active {
+  background-color: rgb(189, 213, 216);
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
+
+@media screen and (min-width: 993px) and (max-width: 1600px) {
+  .button {
+    margin: -7px;
+    margin-top: -72px;
+    margin-right: 9.3px;
+  }
 }

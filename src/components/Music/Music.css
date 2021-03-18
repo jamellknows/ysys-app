@@ -1,0 +1,20 @@
+.sound{
+    float:right;
+    padding: 1;
+    align-items: flex-end;
+    position:absolute;
+    right:0;
+    font-size:small;
+    border-radius: 1rem;
+    margin-right:100px;
+  }
+    
+  .sound:hover {
+    background-color: rgb(189, 213, 216);
+  }
+  
+  .sound:active {
+    background-color: rgb(189, 213, 216);
+    box-shadow: 0 3px rgb(134, 60, 55);
+    transform: translateY(2px);
+  }
